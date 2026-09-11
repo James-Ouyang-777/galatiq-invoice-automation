@@ -1,0 +1,13 @@
+.env
+.venv
+venv
+.git
+.pytest_cache
+__pycache__
+*.db
+*.db-journal
+*.db-wal
+*.db-shm
+data/uploads
+tests
+instructions

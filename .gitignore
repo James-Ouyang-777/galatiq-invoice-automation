@@ -16,3 +16,4 @@ dist/
 .coverage
 htmlcov/
 data/uploads/
+.railway/

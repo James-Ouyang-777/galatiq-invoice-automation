@@ -6,6 +6,10 @@ Clean invoices **auto-pay**. Stock mismatches, unknown SKUs, fraud signals, FX, 
 
 The graph is the supervisor. There is no fifth chatty agent.
 
+**Live demo:** https://acme-ap-production.up.railway.app
+
+Local is the path the brief specified. Railway is extra so you can click through the queue without installing anything.
+
 ## Two-minute demo
 
 ```bash
@@ -86,7 +90,7 @@ Shipped: every sample format, explicit controls, HITL override, traces, batch in
 
 Not shipped (on purpose):
 
-- Real bank, real email inbox, cloud deploy
+- Real bank, real email inbox
 - React / SPA framework
 - Silent FX conversion
 - Expanding inventory so failing invoices pass (WidgetC, SuperGizmo stay unknown)
