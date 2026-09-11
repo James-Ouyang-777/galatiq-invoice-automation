@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Acme AP — Invoice Operations</title>
+  <link rel="stylesheet" href="/static/app.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="brand">
+      <span class="mark">Acme</span>
+      <span class="product">Accounts Payable</span>
+    </div>
+    <p class="lede">Exception queue for invoice automation. Clean invoices pay themselves; the rest wait here.</p>
+    <div class="top-actions">
+      <span id="llm-badge" class="badge">LLM: …</span>
+      <button id="btn-demo" class="btn" type="button">Run 2-min demo</button>
+      <button id="btn-process-all" class="btn primary" type="button">Process inbox</button>
+    </div>
+  </header>
+
+  <section class="metrics" id="metrics">
+    <article><span class="k">Processed</span><strong id="m-processed">0</strong></article>
+    <article><span class="k">Auto-pay rate</span><strong id="m-rate">—</strong></article>
+    <article><span class="k">Paid</span><strong id="m-paid">$0</strong></article>
+    <article><span class="k">Held</span><strong id="m-held">$0</strong></article>
+  </section>
+
+  <main class="layout">
+    <aside class="queue-panel">
+      <div class="panel-head">
+        <h2>Inbox</h2>
+        <span id="queue-count" class="muted">0</span>
+      </div>
+      <div class="upload-box">
+        <label class="upload-label" for="file-input">Drop or choose an invoice</label>
+        <input id="file-input" type="file" accept=".txt,.json,.csv,.xml,.pdf" />
+        <p class="muted upload-hint">txt · json · csv · xml · pdf</p>
+      </div>
+      <div class="demo-block">
+        <p class="muted demo-label">Two-minute path</p>
+        <div class="demo-row">
+          <button class="btn" type="button" data-demo="data/invoices/invoice_1001.txt">1001 pay</button>
+          <button class="btn" type="button" data-demo="data/invoices/invoice_1002.txt">1002 stock</button>
+          <button class="btn" type="button" data-demo="data/invoices/invoice_1003.txt">1003 fraud</button>
+          <button class="btn" type="button" data-demo="data/invoices/invoice_1004.json">1004 pay</button>
+          <button class="btn" type="button" data-demo="data/invoices/invoice_1004_revised.json">1004 R1</button>
+        </div>
+      </div>
+      <ul id="queue" class="queue"></ul>
+    </aside>
+
+    <section class="detail-panel" id="detail">
+      <div class="empty" id="empty-state">
+        <h2>Select an invoice</h2>
+        <p>Upload a file, run the two-minute demo, or process the full inbox. Holds stay here for a clerk — flags first, then the agent trace.</p>
+      </div>
+      <div id="detail-body" hidden></div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast" hidden></div>
+  <script src="/static/app.js"></script>
+</body>
+</html>
